@@ -162,5 +162,3 @@ The main steps of the experiment are as follows:
 The average result (for the different metrics considered) can be computed using the Jupyter Notebook 
 
 `optimization/label_shift/Label_Shift_EvaluationSummary.ipynb`.
-
-
