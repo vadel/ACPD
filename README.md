@@ -62,7 +62,7 @@ Notice that the adversarial examples will be generated using the [DeepFool](http
 
 which will save different numpy matrices in the `adv_attacks/speech_commands/analysis/targeted/` directory. The dimension of the matrices is `N*k`, being `N` the number of samples considered in the experiment and `k` the number of classes in the problem. The cell `(i,j)` of each matrix provides different information about the targeted adversarial attack generated for the input i&#8714;{0,...,N-1} targeting the class j&#8714;{0,...,k-1}:
 
-- `reachability.npy`:  whether an adversarial example targetting the class `j` was successfully found (=1) or not (=0).
+- `reachability.npy`:  whether an adversarial example targetting the class `j` was successfully found `(=1)` or not `(=0)`.
 - `num_steps_vec.npy`: the number of steps/iterations required to generate the attack.
 - `l2_norm_vec.npy`:   the L2 norm of the adversarial perturbation (a file `linf_norm_vec.npy` will be also stored to handle those attacks which are based on the L<sub>&infin;</sub> norm).
 
@@ -137,7 +137,7 @@ The [OpenAttack](https://openattack.readthedocs.io/en/latest/) package is used t
     
 which will save different numpy matrices in the directory `adv_attacks/text/analysis/targeted/emotion/m1/`. The dimension of the matrices is `N*k`, being `N` the number of samples considered in the experiment and `k` the number of classes in the problem. The cell `(i,j)` of each matrix provides different information about the targeted adversarial attack generated for the input i&#8714;{0,...,N-1} targeting the class j&#8714;{0,...,k-1}:
 
-- `reachability.npy`:  Whether an adversarial example targetting the class `j` was successfully found (=1) or not (=0).
+- `reachability.npy`:  Whether an adversarial example targetting the class `j` was successfully found `(=1)` or not `(=0)`.
 - `num_steps_vec.npy`: The number of model queries required to generate the attack.
 - `dist_vec.npy`:   The normalized Levenshtein Edit Distance between the original text and the adversarial text (more details in the paper).
 
@@ -150,7 +150,7 @@ The experiments can be executed using the Jupyter Notebook (using the `venv_spee
 
 The main steps of the experiment are as follows:
 + The source probability distribution is selected (the possible configurations can be found in the notebook or in the paper).
-+ The results corresponding to the adversarial examples computed in the step 1.2 are loaded.
++ The results corresponding to the adversarial examples computed in the steps 1.2 and 1.3 are loaded.
 + The reach of the attacks is filtered taking into account the attack budget, and two subsets of inputs are sampled, one to generate the transition matrices and the other one to evaluate the effectiveness of our attack method.
 + A set of 1000 target probability distributions is randomly sampled.
 + For each target distribution:
