@@ -27,9 +27,9 @@ Installing two virtual environments, one for each set of requirementes, is stron
     
   
 ## Main experimental pipeline
-The code is organized in two different parts: the generation of adversarial examples and the generation of adversarial class probability distributions. In the first part, the adversarial examples are precomputed, for the sake of efficiency. In the second part, the effectiveness of the attack methods proposed (which employ different strategies in order to select the target class for every incoming input) is evaluated. The implementation of our methods can be found in `optimization/acpd_methods.py`.
+The code is organized into two different parts: the generation of adversarial examples and the generation of adversarial class probability distributions. In the first part, the adversarial examples are precomputed, for the sake of efficiency. In the second part, the effectiveness of the attack methods proposed (which employ different strategies in order to select the target class for every incoming input) is evaluated. The implementation of our methods can be found in `optimization/acpd_methods.py`.
 
-In order to ease the execution of our programs, all the main executable files are acommpanied with a "launcher" (a python script), in which the required parameters and options can be specified (the default configuration is set in each of them).
+In order to ease the execution of our programs, all the main executable files are accompanied with a "launcher" (a python script), in which the required parameters and options can be specified (the default configuration is set in each of them).
 
 ### 1. Generation of adversarial examples in the Speech Command Dataset
 The code required in this part can be found in the `./adv_attacks` directory, which contains two subfolders, one for each of the two problems considered in our paper: 
@@ -52,7 +52,7 @@ which will perform the following tasks, for each pair of source and target class
 + Generate, for each input, an adversarial example targeting each of the classes in the problem, using the DeepFool algorithm.
 + Save the results in `adv_attacks/speech_commands/deepfool/results_targ/<source_label>/`. For each input, the following information will be stored: the adversarial perturbation, the number of iterations required, the elapsed time and the predicted "adversarial" class (to check if the attack successfully managed to produce the target class).
     
-Notice that the adversarial examples will be generated using the [DeepFool](https://doi.org/10.1109/CVPR.2016.282) attack method. In order to use attacks other than DeepFool, use the script `targeted_launcher.py` located in the directory `adv_attacks/speech_commands/foolbox/` instead, which makes use of the [Foolboox](https://foolbox.readthedocs.io/en/v2.0.0/) package. The desired attack can be selected using the `sel_attack` variable, and the results will be saved in `adv_attacks/speech_commands/<sel_attack>/results_targ/<source_label>/` (more details can be found in the script).
+Notice that the adversarial examples will be generated using the [DeepFool](https://doi.org/10.1109/CVPR.2016.282) attack method. In order to use attacks other than DeepFool, use the script `targeted_launcher.py` located in the directory `adv_attacks/speech_commands/foolbox/` instead, which makes use of the [Foolbox](https://foolbox.readthedocs.io/en/v2.0.0/) package. The desired attack can be selected using the `sel_attack` variable, and the results will be saved in `adv_attacks/speech_commands/<sel_attack>/results_targ/<source_label>/` (more details can be found in the script).
 
 
 **1.3.** Once all the results corresponding to an adversarial attack have been obtained, they can be "packed" using the following script:
