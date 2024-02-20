@@ -1,6 +1,6 @@
 # ACPD
-This repository contains the code corresponding to the paper *Extending Adversarial Attacks to Produce Adversarial Class Probability Distributions*, by
-Jon Vadillo, Roberto Santana & Jose A. Lozano (Under Review).
+This repository contains the code corresponding to the paper ***Extending Adversarial Attacks to Produce Adversarial Class Probability Distributions***, by
+Jon Vadillo, Roberto Santana & Jose A. Lozano, *Journal of Machine Learning Research, 24(15), 1-42*.
 
 ## Setup instructions
 The following instructions describe how to download and create the required resources:
