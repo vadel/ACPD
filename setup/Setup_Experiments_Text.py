@@ -32,7 +32,8 @@ if main_setup == "emotion":
     #2) Dataset adaptation functions
     def dataset_mapping(x): return { "x": x["text"], "y": x["label"]}
     #Load data
-    dataset = datasets.load_dataset("emotion", split=None, keep_in_memory=True, download_mode='force_redownload')
+    #dataset = datasets.load_dataset("emotion", split=None, keep_in_memory=True, download_mode='force_redownload')
+    dataset = datasets.load_dataset("dair-ai/emotion", split=None, keep_in_memory=True, download_mode='force_redownload')
 else:
     sys.exit("Main setup not supported yet. Options: [emotion]")
 
